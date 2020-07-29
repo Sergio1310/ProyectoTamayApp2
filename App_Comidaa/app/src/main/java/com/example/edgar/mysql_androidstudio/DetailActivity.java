@@ -1,6 +1,8 @@
 package com.example.edgar.mysql_androidstudio;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -62,8 +64,8 @@ public class DetailActivity extends AppCompatActivity {
         acept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Toast.makeText(DetailActivity.this, "ID producto " + id+ " ID usuario: ", Toast.LENGTH_SHORT).show();
+                SharedPreferences prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+                Toast.makeText(DetailActivity.this, "ID producto " + id+ " ID usuario: " + prefs.getString("id_usuario", "0") , Toast.LENGTH_SHORT).show();
 
             }
         });
