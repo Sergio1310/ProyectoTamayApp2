@@ -63,11 +63,7 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String idcli=idclienteapp.idcliapp;
-
-
-
-                Toast.makeText(DetailActivity.this, "ID producto " + id+ " ID usuario: "+idcli, Toast.LENGTH_SHORT).show();
+                Toast.makeText(DetailActivity.this, "ID producto " + id+ " ID usuario: ", Toast.LENGTH_SHORT).show();
 
             }
         });
