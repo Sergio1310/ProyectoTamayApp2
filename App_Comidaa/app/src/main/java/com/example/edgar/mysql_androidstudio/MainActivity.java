@@ -79,13 +79,6 @@ public class MainActivity extends AppCompatActivity {
         setUpHomeUpIconAndColor(R.drawable.ic_los_toxicos4, R.color.colorWhiteApp);
         customTitleToolbar();
 
-        Bundle extras = getIntent().getExtras();
-        String idcliente1= extras.getString("IDCliente");
-
-        idclienteapp.idcliapp=idcliente1;
-
-
-
     }
 
 
