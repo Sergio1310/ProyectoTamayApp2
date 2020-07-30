@@ -15,7 +15,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import fragments.BebidasFragment;
 import fragments.ComidasFragment;
@@ -25,12 +27,12 @@ public class carrito extends AppCompatActivity {
 
     private Toolbar toolbar;
     BottomNavigationView mBottomNavigation;
-
+    LinearLayout contenedor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carrito);
-
+        contenedor = (LinearLayout) findViewById(R.id.contenedor);
         setUpToolbar();
         setUpHomeUpIconAndColor(R.drawable.ic_los_toxicos4, R.color.colorWhiteApp);
         customTitleToolbar();
@@ -43,6 +45,7 @@ public class carrito extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 if(menuItem.getItemId() == R.id.confirmar){
                     Intent welcome = new Intent(carrito.this, pedidos.class);
+                    Toast.makeText(carrito.this,"Su pedido ya esta en camino",Toast.LENGTH_LONG).show();
                     startActivity(welcome);
                 }
 
@@ -50,6 +53,13 @@ public class carrito extends AppCompatActivity {
                 return true;
             }
         });
+
+        class check{
+            public String id;
+            public String nombre;
+
+
+        }
 
 
     }
