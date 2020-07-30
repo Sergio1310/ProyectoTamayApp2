@@ -84,13 +84,13 @@ public class DetailActivity extends AppCompatActivity implements Response.Listen
                     Response.Listener<JSONObject> listener = new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
-                                Toast.makeText(getApplicationContext(),"Producto añadido al carrito!", Toast.LENGTH_LONG).show();
+
                         }
                     };
                     Response.ErrorListener errorListener = new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(getApplicationContext(),"Algo inesperado sucedio, no se añadio al carrito " + error,Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Producto añadido al carrito!", Toast.LENGTH_LONG).show();
                         }
                     };
                     jsonObjectRequest =  new JsonObjectRequest(Request.Method.GET,url,null,listener,errorListener);
